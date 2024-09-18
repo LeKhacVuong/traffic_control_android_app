@@ -10,12 +10,20 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+import android.util.Log;
 
-    ImageButton imgBtnSN;
+
+public class MainActivity extends AppCompatActivity implements Sn_input_dialog.sn_input_dialog_if{
+    private static final String TAG = "vuong_lk_main";
+
+    ImageButton imgBtnSn, imgBtnQr;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "Start application");
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
@@ -25,17 +33,28 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        imgBtnSN = findViewById(R.id.img_btn_sn);
+        imgBtnSn = findViewById(R.id.img_btn_sn);
+        imgBtnQr = findViewById(R.id.img_btn_qr);
 
-        imgBtnSN.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
+    }
+
+    public void onInputSn(View view){
+        Log.d(TAG, "Open input SN dialog callback");
+
+        Sn_input_dialog sn_input_dialog = new Sn_input_dialog();
+        sn_input_dialog.show(getSupportFragmentManager(), "Enter light id");
+
+    }
+
+    public void onInputQr(View view) {
+        Log.d(TAG, "Open input QR dialog callback");
+
+    }
 
 
-
-            }
-        });
-
+    @Override
+    public void user_typed_light_sn(String sn) {
+        Log.d(TAG, "Now connect to light sn " + sn);
 
     }
 }

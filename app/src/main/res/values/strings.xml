@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Hello_W</string>
+    <string name="enter_serial_number">Enter Serial Number</string>
 </resources>

@@ -9,9 +9,9 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/image_all_light"
+        android:layout_width="216dp"
+        android:layout_height="400dp"
         android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,26 +24,29 @@
         android:id="@+id/img_btn_qr"
         android:layout_width="190dp"
         android:layout_height="174dp"
-        android:layout_marginStart="228dp"
         android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/img_btn_sn"
-        app:layout_constraintHorizontal_bias="0.033"
+        android:onClick="onInputQr"
+        android:background="@android:color/transparent"
+    app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/image_all_light"
+        app:layout_constraintHorizontal_bias="0.88"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.456"
+        app:layout_constraintTop_toBottomOf="@+id/image_all_light"
+        app:layout_constraintVertical_bias="0.504"
         app:srcCompat="@drawable/qr_btn_icon" />
 
     <ImageButton
         android:id="@+id/img_btn_sn"
         android:layout_width="190dp"
         android:layout_height="174dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="228dp"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/app_name"
+        android:onClick="onInputSn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.367"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toEndOf="@+id/image_all_light"
+        app:layout_constraintTop_toBottomOf="@+id/image_all_light"
+        app:layout_constraintVertical_bias="0.504"
         app:srcCompat="@drawable/sn_btn_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>
